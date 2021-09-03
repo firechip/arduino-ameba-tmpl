@@ -1,0 +1,9 @@
+{
+    "board": "realtek:AmebaD:ameba_rtl8721d",
+    "port": "COM12",
+    "sketch": "arduino-ameba-tmpl.ino",
+    "output": "build",
+    "debugger": "jlink",
+    "intelliSenseGen": "global",
+    "postbuild": "IF \"%VSCA_BUILD_MODE%\"==\"Verifying\" (copy C:\\Users\\ajsb85\\AppData\\Local\\Arduino15\\packages\\realtek\\tools\\ameba_d_tools\\1.0.5\\km0_km4_image2.bin flash)"
+}

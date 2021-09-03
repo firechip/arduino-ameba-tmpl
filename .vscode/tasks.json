@@ -1,0 +1,86 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Upload firmware",
+            "type": "shell",
+            "command": "./image_tool COM17",
+            "windows": {
+                "command": ".\\amebad_image_tool.exe %VSCA_SERIAL%"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}\\flash",
+                "env": {
+                    "VSCA_SERIAL": "COM12",
+                }
+            },
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "make current example",
+            "type": "shell",
+            "command": "make EXAMPLE=${fileBasenameNoExtension}",
+            "group": "build",
+            "isBackground": false,
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "program current example",
+            "type": "shell",
+            "command": "make program EXAMPLE=${fileBasenameNoExtension}",
+            "group": "test",
+            "isBackground": false,
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Example1",
+            "type": "shell",
+            "command": "arduino-cli compile -v -b arduino:avr:uno examples/Example1_BasicReadings",
+            "group": "build",
+            "isBackground": false,
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Example1-program",
+            "type": "shell",
+            "command": "arduino-cli upload -p COM18 -v --fqbn arduino:avr:uno examples/Example1_BasicReadings",
+            "group": "test",
+            "isBackground": false,
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}

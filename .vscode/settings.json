@@ -1,0 +1,8 @@
+{
+    "arduino.useArduinoCli": true,
+    "arduino.path": "C:\\tools\\arduino-cli_0.18.3_Windows_64bit",
+    "arduino.logLevel": "info",
+    "arduino.additionalUrls": "",
+    "arduino.enableUSBDetection": true,
+    "C_Cpp.intelliSenseEngine": "Tag Parser"
+}

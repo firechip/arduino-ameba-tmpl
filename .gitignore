@@ -1,3 +1,9 @@
+# Build
+build/*
+
+# Flash
+flash/km0_km4_image2.bin
+
 # Prerequisites
 *.d
 
